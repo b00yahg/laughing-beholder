@@ -69,6 +69,48 @@
       position: relative;
     }
 
+    .beholder-icon {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .beholder-svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
+    }
+
+    .beholder-eye {
+      animation: blink 4s infinite;
+    }
+
+    .eye-stalk {
+      animation: float 3s infinite;
+      transform-origin: center;
+    }
+
+    .eye-stalk:nth-child(odd) {
+      animation-delay: 0.5s;
+    }
+
+    .eye-stalk:nth-child(even) {
+      animation-delay: 1s;
+    }
+
+    @keyframes blink {
+      0%, 96%, 98% { transform: scaleY(1); }
+      97% { transform: scaleY(0.1); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+    }
+
     .title {
       font-family: 'UnifrakturMaguntia', cursive;
       font-size: 4rem;
@@ -144,22 +186,6 @@
       color: #8b6b2e;
       font-size: 0.9rem;
     }
-
-    .beholder-icon {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      top: -75px;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0.2;
-    }
-
-    /* Add placeholder for beholder SVG */
-    .beholder-icon img {
-      width: 100%;
-      height: 100%;
-    }
   </style>
 </head>
 <body>
@@ -171,7 +197,77 @@
 
     <div class="header">
       <div class="beholder-icon">
-        <img src="/api/placeholder/150/150" alt="Beholder Icon">
+        <svg viewBox="0 0 200 200" class="beholder-svg">
+          <!-- Main body circle -->
+          <circle cx="100" cy="100" r="60" fill="#8b6b2e" opacity="0.9"/>
+          
+          <!-- Central eye -->
+          <g class="beholder-eye">
+            <circle cx="100" cy="100" r="30" fill="#d4af37"/>
+            <ellipse cx="100" cy="100" rx="15" ry="25" fill="#0a1019"/>
+          </g>
+          
+          <!-- Eye stalks -->
+          <g class="eye-stalk">
+            <path d="M100,50 Q120,40 140,45" stroke="#8b6b2e" stroke-width="8" fill="none"/>
+            <circle cx="140" cy="45" r="10" fill="#8b6b2e"/>
+            <circle cx="140" cy="45" r="6" fill="#d4af37"/>
+            <circle cx="140" cy="45" r="3" fill="#0a1019"/>
+          </g>
+          
+          <g class="eye-stalk">
+            <path d="M135,85 Q155,85 170,75" stroke="#8b6b2e" stroke-width="8" fill="none"/>
+            <circle cx="170" cy="75" r="10" fill="#8b6b2e"/>
+            <circle cx="170" cy="75" r="6" fill="#d4af37"/>
+            <circle cx="170" cy="75" r="3" fill="#0a1019"/>
+          </g>
+          
+          <g class="eye-stalk">
+            <path d="M135,115 Q155,115 170,125" stroke="#8b6b2e" stroke-width="8" fill="none"/>
+            <circle cx="170" cy="125" r="10" fill="#8b6b2e"/>
+            <circle cx="170" cy="125" r="6" fill="#d4af37"/>
+            <circle cx="170" cy="125" r="3" fill="#0a1019"/>
+          </g>
+          
+          <g class="eye-stalk">
+            <path d="M100,150 Q120,160 140,155" stroke="#8b6b2e" stroke-width="8" fill="none"/>
+            <circle cx="140" cy="155" r="10" fill="#8b6b2e"/>
+            <circle cx="140" cy="155" r="6" fill="#d4af37"/>
+            <circle cx="140" cy="155" r="3" fill="#0a1019"/>
+          </g>
+          
+          <!-- Mirror the stalks for the left side -->
+          <g class="eye-stalk">
+            <path d="M100,50 Q80,40 60,45" stroke="#8b6b2e" stroke-width="8" fill="none"/>
+            <circle cx="60" cy="45" r="10" fill="#8b6b2e"/>
+            <circle cx="60" cy="45" r="6" fill="#d4af37"/>
+            <circle cx="60" cy="45" r="3" fill="#0a1019"/>
+          </g>
+          
+          <g class="eye-stalk">
+            <path d="M65,85 Q45,85 30,75" stroke="#8b6b2e" stroke-width="8" fill="none"/>
+            <circle cx="30" cy="75" r="10" fill="#8b6b2e"/>
+            <circle cx="30" cy="75" r="6" fill="#d4af37"/>
+            <circle cx="30" cy="75" r="3" fill="#0a1019"/>
+          </g>
+          
+          <g class="eye-stalk">
+            <path d="M65,115 Q45,115 30,125" stroke="#8b6b2e" stroke-width="8" fill="none"/>
+            <circle cx="30" cy="125" r="10" fill="#8b6b2e"/>
+            <circle cx="30" cy="125" r="6" fill="#d4af37"/>
+            <circle cx="30" cy="125" r="3" fill="#0a1019"/>
+          </g>
+          
+          <g class="eye-stalk">
+            <path d="M100,150 Q80,160 60,155" stroke="#8b6b2e" stroke-width="8" fill="none"/>
+            <circle cx="60" cy="155" r="10" fill="#8b6b2e"/>
+            <circle cx="60" cy="155" r="6" fill="#d4af37"/>
+            <circle cx="60" cy="155" r="3" fill="#0a1019"/>
+          </g>
+          
+          <!-- Mouth -->
+          <path d="M70,120 Q100,140 130,120" stroke="#d4af37" stroke-width="3" fill="none"/>
+        </svg>
       </div>
       <h1 class="title">The Laughing Beholder</h1>
       <p class="subtitle">Where Space Meets Spirits</p>
@@ -186,7 +282,57 @@
       </div>
       <p class="description">An imported red wine with a taste that is dark and sweet with a slight burning aftertaste.</p>
     </div>
-    
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Celanese Wine</span>
+        <span class="price">7 gp, 1 sp (bottle) | 2 gp, 3 sp (glass)</span>
+      </div>
+      <p class="description">Made from the grapes of the Celanese vines in Oerth. This white wine has a taste that is dry and green.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Daoin ama drim</span>
+        <span class="price">2 gp, 6 sp (bottle) | 8 sp, 9 cp (glass)</span>
+      </div>
+      <p class="description">A locally produced elven rosé wine that is described as herbaceous and lean.</p>
+    </div>
+
+    <!-- Lagers & Ales Section -->
+    <h2 class="section-title">Lagers & Ales</h2>
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Nightwood Ale (4.95% ABV)</span>
+        <span class="price">4 sp, 2 cp (gallon) | 8 cp (pint)</span>
+      </div>
+      <p class="description">An Eberron brewed light amber fruit ale. Described as a robust ale with a bitter finish.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Musty Giff Stout (6.05% ABV)</span>
+        <span class="price">2 sp, 9 cp (gallon) | 5 cp (pint)</span>
+      </div>
+      <p class="description">A locally brewed medium brown stout. Described as a fruity stout with a smooth finish.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Impatient Elemental Malt (3.82% ABV)</span>
+        <span class="price">3 sp, 3 cp (gallon) | 6 cp (pint)</span>
+      </div>
+      <p class="description">A Ravnica brewed chestnut brown malt. Described as a pleasantly bitter malt with a rich finish.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">The Death Helm Porter (5.18% ABV)</span>
+        <span class="price">3 sp, 8 cp (gallon) | 7 cp (pint)</span>
+      </div>
+      <p class="description">A microbrewed brown porter. Described as a sweet porter with an aftertaste of caramel and a creamy finish.</p>
+    </div>
+
     <!-- Cocktails Section -->
     <h2 class="section-title">Signature Cocktails</h2>
     <div class="menu-item">
@@ -196,18 +342,137 @@
       </div>
       <p class="description">
         This "creative" cocktail is a unique spin on the Long Island that has a cult following by many spacefarers hailing from Exandria. 
-        <span class="magical-effect">Elderberry liqueur, lemon juice, dry vermouth, espresso, rum, mezcal, absinthe, Newcastle brown ale, and... yogurt. Shaken and served with a cherry to garnish.</span>
+        <span class="magical-effect">Includes Elderberry liqueur, lemon juice, dry vermouth, espresso, rum, mezcal, absinthe,Newcastle brown ale, and... yogurt. Shaken and served with a cherry to garnish.</span>
       </p>
     </div>
 
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Vorpal Blade Vendetta</span>
+        <span class="price">9 cp</span>
+      </div>
+      <p class="description">
+        <span class="magical-effect">This blood-red cocktail features Meteor blackberry liqueur layered precisely with Dragonborn fire brandy and rare Moon-touched absinthe. A razor-thin slice of Silver Dragon scale floats on top, catching the light just like its namesake blade.</span>
+      </p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Savage Thunder Strike</span>
+        <span class="price">8 cp</span>
+      </div>
+      <p class="description">
+        <span class="magical-effect">This electric-blue drink combines Cloud Giant's lightning-distilled vodka with crushed Feywild berries and a splash of Storm Sphere essence. Garnished with an elemental crystal that periodically releases tiny lightning arcs through the drink.</span>
+      </p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Double Fist Fury</span>
+        <span class="price">1 sp, 3 cp</span>
+      </div>
+      <p class="description">
+        <span class="magical-effect">Bugbear-brewed mead meets Owlbear honey and fermented Wildspace mushrooms, creating a thick, golden liquid that seems to pulse with its own heartbeat. Sprinkled with Phlogiston dust and served in a large double-handled mug, and lit on fire to create a rainbow sparkling effect.</span>
+      </p>
+    </div>
+
+    <!-- Sodas Section -->
+    <h2 class="section-title">Sodas</h2>
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Zil</span>
+        <span class="price">2 cp</span>
+      </div>
+      <p class="description">Thanks to the good people of House Ghallanda, The Laughing Beholder gladly serves Zil. This is carbonated water flavored to your exact specifications using prestidigitation.</p>
+    </div>
+
     <!-- Food Section -->
-    <h2 class="section-title">House Specialties</h2>
+    <h2 class="section-title">Food</h2>
+    
+    <!-- Starters -->
+    <h3 class="section-title">Starters</h3>
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Scavver Tartar</span>
+        <span class="price">1 sp, 2 cp</span>
+      </div>
+      <p class="description">Fresh raw night scavver served in spicy vinegar sauce, accompanied by halfling bread.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Kraken Calamari</span>
+        <span class="price">9 cp</span>
+      </div>
+      <p class="description">Lightly breaded and fried tentacle meat served with lemon, best when made from young kraken.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Purple Worm Rings</span>
+        <span class="price">7 cp</span>
+      </div>
+      <p class="description">Deep-fried strips of purple worm meat served with fried potatoes and a creamy ranch sauce.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Cured Starsalmon</span>
+        <span class="price">4 cp</span>
+      </div>
+      <p class="description">Salt-cured pink strips of meat dried to jerky consistency. Also offered in bags to go for those long voyages.</p>
+    </div>
+
+    <!-- Soups and Salads -->
+    <h3 class="section-title">Soups and Salads</h3>
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Starfruit Salad</span>
+        <span class="price">6 cp</span>
+      </div>
+      <p class="description">Sweet and nourishing fruit with citrus-like tang.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Jettison Stew</span>
+        <span class="price">1 cp</span>
+      </div>
+      <p class="description">A humble soup made with water and whatever ingredients can be found that day.</p>
+    </div>
+
+    <!-- Entrées -->
+    <h3 class="section-title">Entrées</h3>
     <div class="menu-item specialty">
       <div class="item-header">
         <span class="item-name">Baby Puffer in Garlic Sauce</span>
         <span class="price">2 sp, 2 cp</span>
       </div>
-      <p class="description">Large Luigi's Specialty. While usually dangerous, Luigi's petrifying rays help remove toxic elements.</p>
+      <p class="description">Large Luigi's specialty. While usually dangerous, Luigi's petrifying rays help remove toxic elements.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Space Swine</span>
+        <span class="price">1 sp, 2 cp</span>
+      </div>
+      <p class="description">Tough, boar-like meat served slow-baked with apple sauce.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Fried Pickled Troll Gizzards</span>
+        <span class="price">1 sp</span>
+      </div>
+      <p class="description">Grilled, pickled, and fried troll meat with a chicken-like taste.</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-header">
+        <span class="item-name">Edilian</span>
+        <span class="price">1 sp, 2 cp</span>
+      </div>
+      <p class="description">Exclusive pale amber dragon-food meat resembling mild whitefish, typically paired with Daoin ama drim.</p>
     </div>
 
     <div class="footer">
