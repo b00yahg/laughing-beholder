@@ -64,18 +64,17 @@
     }
 
     .header {
-      text-align: center;
-      margin-bottom: 3rem;
-      position: relative;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        padding-top: 2rem; /* Added padding to accommodate the new layout */
     }
 
     .beholder-icon {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
+        position: relative; /* Changed from absolute */
+        width: 150px; /* Reduced from 200px */
+        height: 150px;
+        margin: 0 auto -30px; /* Centers the icon and overlaps slightly with title */
     }
 
     .beholder-svg {
@@ -112,11 +111,13 @@
     }
 
     .title {
-      font-family: 'UnifrakturMaguntia', cursive;
-      font-size: 4rem;
-      color: #d4af37;
-      margin: 0;
-      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        font-family: 'UnifrakturMaguntia', cursive;
+        font-size: 3.5rem; /* Slightly smaller */
+        color: #d4af37;
+        margin: 0;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        position: relative; /* Added for z-index control */
+        z-index: 1; /* Ensures title stays above beholder */
     }
 
     .subtitle {
@@ -266,7 +267,8 @@
           </g>
           
           <!-- Mouth -->
-          <path d="M70,120 Q100,140 130,120" stroke="#d4af37" stroke-width="3" fill="none"/>
+          <!-- Replace the existing mouth path with this -->
+          <path d="M70,110 Q100,130 130,110 T130,120" stroke="#d4af37" stroke-width="3" fill="none"/>
         </svg>
       </div>
       <h1 class="title">The Laughing Beholder</h1>
