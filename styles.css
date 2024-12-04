@@ -1,0 +1,162 @@
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+    /* Base Styles */
+    body {
+      background-color: #0a1019;
+      color: #d4d4d4;
+      font-family: 'Crimson Text', serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100px 100px;
+    }
+
+    /* Page Structure */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .content-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: linear-gradient(to bottom, rgba(20, 30, 48, 0.95), rgba(10, 16, 25, 0.95));
+      border: 2px solid #8b6b2e;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      flex-grow: 1;
+    }
+
+    /* Decorative Elements */
+    .corner-decoration {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 2px solid #8b6b2e;
+      opacity: 0.8;
+    }
+
+    .top-left {
+      top: -2px;
+      left: -2px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .top-right {
+      top: -2px;
+      right: -2px;
+      border-left: none;
+      border-bottom: none;
+    }
+
+    .bottom-left {
+      bottom: -2px;
+      left: -2px;
+      border-right: none;
+      border-top: none;
+    }
+
+    .bottom-right {
+      bottom: -2px;
+      right: -2px;
+      border-left: none;
+      border-top: none;
+    }
+
+    /* Header Styles */
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .title {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 4rem;
+      color: #d4af37;
+      margin: 0;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    .subtitle {
+      font-style: italic;
+      color: #8b6b2e;
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Section Styles */
+    .section {
+      margin: 2rem 0;
+      padding: 2rem;
+      background: rgba(20, 30, 48, 0.5);
+      border: 1px solid #8b6b2e;
+      border-radius: 5px;
+    }
+
+    .section-title {
+      font-family: 'UnifrakturMaguntia', cursive;
+      color: #d4af37;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .section-content {
+      color: #a8a8a8;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* Navigation */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .nav-button {
+      background: transparent;
+      border: 2px solid #8b6b2e;
+      color: #d4af37;
+      padding: 0.5rem 1rem;
+      font-family: 'Crimson Text', serif;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background: rgba(139, 107, 46, 0.2);
+      text-shadow: 0 0 5px #d4af37;
+    }
+
+    /* Entertainment Schedule */
+    .performance-details {
+      background: rgba(139, 107, 46, 0.1);
+      padding: 1rem;
+      margin-top: 1rem;
+      border-left: 3px solid #d4af37;
+    }
+
+    .performer {
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    .performance-time {
+      color: #8b6b2e;
+      font-style: italic;
+    }
+  </style>
