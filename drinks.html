@@ -1,1 +1,313 @@
-// drinks
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Previous base styles remain the same */
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+    /* Base and container styles from previous page */
+    body {
+      background-color: #0a1019;
+      color: #d4d4d4;
+      font-family: 'Crimson Text', serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100px 100px;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .content-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: linear-gradient(to bottom, rgba(20, 30, 48, 0.95), rgba(10, 16, 25, 0.95));
+      border: 2px solid #8b6b2e;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    /* Menu specific styles */
+    .menu-section {
+      margin: 2rem 0;
+      padding: 2rem;
+      background: rgba(20, 30, 48, 0.5);
+      border: 1px solid #8b6b2e;
+      border-radius: 5px;
+    }
+
+    .menu-section-title {
+      font-family: 'UnifrakturMaguntia', cursive;
+      color: #d4af37;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    .menu-subsection-title {
+      color: #8b6b2e;
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #8b6b2e;
+      font-style: italic;
+    }
+
+    .menu-item {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .menu-item:hover {
+      background-color: rgba(139, 107, 46, 0.1);
+    }
+
+    .menu-item-content {
+      flex: 1;
+    }
+
+    .menu-item-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 2px solid #8b6b2e;
+      border-radius: 5px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-name {
+      font-weight: 600;
+      color: #d4af37;
+      font-size: 1.3rem;
+    }
+
+    .price {
+      color: #8b6b2e;
+      font-style: italic;
+    }
+
+    .description {
+      color: #a8a8a8;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .magical-effect {
+      color: #4a9eff;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 2rem;
+    }
+
+    .featured-item {
+      background: linear-gradient(to right, rgba(139, 107, 46, 0.1), transparent);
+      border-left: 3px solid #d4af37;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+
+    .nav-button {
+      background: transparent;
+      border: 2px solid #8b6b2e;
+      color: #d4af37;
+      padding: 0.5rem 1rem;
+      font-family: 'Crimson Text', serif;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background: rgba(139, 107, 46, 0.2);
+      text-shadow: 0 0 5px #d4af37;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="content-container">
+      <!-- Drinks Section -->
+      <section class="menu-section">
+        <h2 class="menu-section-title">Drinks</h2>
+        
+        <!-- Wines -->
+        <h3 class="menu-subsection-title">Fine Wines</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">Berduskan Dark</span>
+                <span class="price">1 gp, 5 sp (bottle) | 5 sp, 3 cp (glass)</span>
+              </div>
+              <p class="description">An imported red wine with a taste that is dark and sweet with a slight burning aftertaste.</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">Celanese Wine</span>
+                <span class="price">7 gp, 1 sp (bottle) | 2 gp, 3 sp (glass)</span>
+              </div>
+              <p class="description">Made from the grapes of the Celanese vines in Oerth. This white wine has a taste that is dry and green.</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">Daoin ama drim</span>
+                <span class="price">2 gp, 6 sp (bottle) | 8 sp, 9 cp (glass)</span>
+              </div>
+              <p class="description">A locally produced elven rosé wine that is described as herbaceous and lean.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beers -->
+        <h3 class="menu-subsection-title">Lagers & Ales</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">Nightwood Ale</span>
+                <span class="price">4 sp, 2 cp (gallon) | 8 cp (pint)</span>
+              </div>
+              <p class="description">An Eberron brewed light amber fruit ale (4.95% ABV). Described as a robust ale with a bitter finish.</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">Musty Giff Stout</span>
+                <span class="price">2 sp, 9 cp (gallon) | 5 cp (pint)</span>
+              </div>
+              <p class="description">A locally brewed medium brown stout (6.05% ABV). Described as a fruity stout with a smooth finish.</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">Impatient Elemental Malt</span>
+                <span class="price">3 sp, 3 cp (gallon) | 6 cp (pint)</span>
+              </div>
+              <p class="description">A Ravnica brewed chestnut brown malt (3.82% ABV). Described as a pleasantly bitter malt with a rich finish.</p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">The Death Helm Porter</span>
+                <span class="price">3 sp, 8 cp (gallon) | 7 cp (pint)</span>
+              </div>
+              <p class="description">A microbrewed brown porter (5.18% ABV). Described as a sweet porter with an aftertaste of caramel and a creamy finish.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cocktails -->
+        <h3 class="menu-subsection-title">Signature Cocktails</h3>
+        <div class="menu-grid">
+          <div class="menu-item featured-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">Vorpal Blade Vendetta</span>
+                <span class="price">9 cp</span>
+              </div>
+              <p class="description">
+                <span class="magical-effect">This blood-red cocktail features Meteor blackberry liqueur layered precisely with Dragonborn fire brandy and rare Moon-touched absinthe. A razor-thin slice of Silver Dragon scale floats on top, catching the light just like its namesake blade.</span>
+              </p>
+            </div>
+            <img src="/api/placeholder/150/150" alt="Vorpal Blade Vendetta Cocktail" class="menu-item-image" />
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">The Eldermancy</span>
+                <span class="price">4 sp</span>
+              </div>
+              <p class="description">
+                This "creative" cocktail is a unique spin on the Long Island that has a cult following by many spacefarers hailing from Exandria.
+                <span class="magical-effect">Includes Elderberry liqueur, lemon juice, dry vermouth, espresso, rum, mezcal, absinthe, Newcastle brown ale, and... yogurt. Shaken and served with a cherry to garnish.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">Savage Thunder Strike</span>
+                <span class="price">8 cp</span>
+              </div>
+              <p class="description">
+                <span class="magical-effect">This electric-blue drink combines Cloud Giant's lightning-distilled vodka with crushed Feywild berries and a splash of Storm Sphere essence. Garnished with an elemental crystal that periodically releases tiny lightning arcs through the drink.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">Double Fist Fury</span>
+                <span class="price">1 sp, 3 cp</span>
+              </div>
+              <p class="description">
+                <span class="magical-effect">Bugbear-brewed mead meets Owlbear honey and fermented Wildspace mushrooms, creating a thick, golden liquid that seems to pulse with its own heartbeat. Sprinkled with Phlogiston dust and served in a large double-handled mug, and lit on fire to create a rainbow sparkling effect.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Non-Alcoholic -->
+        <h3 class="menu-subsection-title">Non-Alcoholic Beverages</h3>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <div class="menu-item-content">
+              <div class="item-header">
+                <span class="item-name">Zil</span>
+                <span class="price">2 cp</span>
+              </div>
+              <p class="description">Thanks to the good people of House Ghallanda, The Laughing Beholder gladly serves Zil. This is carbonated water flavored to your exact specifications using prestidigitation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- I'll continue with the food section in the next message as we're reaching length limits -->
+      
+    </div>
+  </div>
+</body>
+</html>
